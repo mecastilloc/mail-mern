@@ -19,8 +19,8 @@ var transport = {
   auth: {
     // user: creds.USER,
     // pass: creds.PASS
-    user: "teamorganizer@outlook.com",
-    pass: "OyeComoVa"
+    user: "bla", //use your maill user
+    pass: "bla" //use your mail password
   }
 }
 
