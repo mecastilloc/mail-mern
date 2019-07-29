@@ -1,19 +1,11 @@
-const db = require("../models");
+const mongo = require("../models");
 
 module.exports = {
-  findAll(req, res) {
-    db.Mails.find(req.searchTerm)
-      .then(dbMails => res.json(dbMails))
-      .catch((err) => {
-        console.log(err);
-        res.json(err);
-      });
-  },
   
   findByTaskId(req, res) {
     console.log(req.params.taskId)
-    db.Mails.find({taskId: req.params.taskId})
-      .then(dbMails => res.json(dbMails))
+    mongo.Mails.find({taskId: req.params.taskId})
+      .then(mongoMails => res.json(mongoMails))
       .catch((err) => {
         console.log(err);
         res.json(err);
@@ -21,9 +13,8 @@ module.exports = {
   },
 
   saveMail(req, res) {
-    console.log(req.body)
-    db.Mails.create(req.body)
-      .then(dbMails => res.json(dbMails))
+    mongo.Mails.create(req.body)
+      .then(mongoMails => res.json(mongoMails))
       .catch((err) => {
         console.log(err);
         res.json(err);

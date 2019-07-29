@@ -8,6 +8,7 @@ router.use("/api", apiRoutes);
 
 
 
+
 var transport = {
   host: 'smtp-mail.outlook.com',
   secureConnection: false, // TLS requires secureConnection to be false

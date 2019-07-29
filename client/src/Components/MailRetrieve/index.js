@@ -5,44 +5,28 @@ import API from "../../utils/API";
 class MailRetrieve extends Component {
   state = {
     savedMails: [],
-
   };
-
-
-
-
-
 
   componentDidMount = () => {
-
+    //parameter to search for mails now harcoded
     let taskId = "01";
-    console.log(taskId)
     this.getSaved(taskId);
-    console.log(taskId)
-  }
 
-  getSaved = (taskId) => {
-    console.log(taskId)
-    API.getSavedMails(taskId)
-      .then(res => {
-        console.log(taskId)
-
-        this.setState({ savedMails: res.data })
-        console.log(res.data)
-      }
-
-
-
-      )
-      .catch(err => console.log(err));
   };
 
+  getSaved = (taskId) => {
+    API.getSavedMails(taskId)
+      .then(res => {
+        this.setState({ savedMails: res.data })
+        console.log(res.data)
+      })
+      .catch(err => console.log(err));
+  };
 
   render() {
     return (
       <>
         <div>
-
           {!this.state.savedMails.length ? (
             <h2 >No History Yet</h2>
           ) : (
@@ -50,7 +34,6 @@ class MailRetrieve extends Component {
                 <h2>Task Mail History</h2>
                 {this.state.savedMails.map(mail => {
                   return (
-
                     <div key={mail._id}>
                       <p >
                         <strong>From:</strong> {mail.senderName + " <" + mail.senderEmail + "> "}{" "}
@@ -64,19 +47,18 @@ class MailRetrieve extends Component {
                       <p >
                         <strong>Message:</strong> {mail.message}{" "}
                       </p>
-                      <hr/>
+                      <hr />
                     </div>
                   );
                 })
                 }
               </div>
             )
-
           }
         </div>
       </>
-
     );
   };
 };
+
 export default MailRetrieve; 
