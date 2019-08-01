@@ -19,8 +19,8 @@ var transport = {
   auth: {
     // user: creds.USER,
     // pass: creds.PASS
-    user: "bla", //use your maill user
-    pass: "bla" //use your mail password
+    user: process.env.mailUser, //use your maill user
+    pass: process.env.mailPassword //use your mail password
   }
 }
 
