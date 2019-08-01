@@ -22,7 +22,7 @@ class MailForm extends Component {
 
         axios({
             method: "POST",
-            url: "http://localhost:3002/send",
+            url: "/send",
             data: mailData
         })
         .then((response) => {
