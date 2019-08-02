@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MailForm from './Components/Mail';
+import MailForm from './components/Mail';
 
 class App extends Component {
   render() {
