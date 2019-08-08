@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import API from "../../utils/API";
 import axios from 'axios';
 import MailRetrieve from "../MailRetrieve"
-import FileUpload from "../FileUpload"
+// import FileUpload from "../FileUpload"
 
 class MailForm extends Component {
     constructor(props){
