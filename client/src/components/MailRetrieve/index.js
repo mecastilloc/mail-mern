@@ -18,7 +18,7 @@ class MailRetrieve extends Component {
     API.getSavedMails(taskId)
       .then(res => {
         this.setState({ savedMails: res.data })
-        console.log(res.data)
+        // console.log(res.data)
       })
       .catch(err => console.log(err));
   };
